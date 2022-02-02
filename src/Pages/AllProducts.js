@@ -3,7 +3,7 @@ import AllProductsComp from "../Components/AllProductsComp";
 
 const AllProducts = () => {
     return (
-        <div className='pageWrap'>
+        <div className='pageWrap wrap'>
             <AllProductsComp/>
         </div>
     );

@@ -1,9 +1,10 @@
 import React, {useContext} from 'react';
 import MainContext from "../Context/MainContext";
+import {useNavigate} from "react-router-dom";
 
 const AllProductsComp = () => {
-    const {getProduct, setProduct} = useContext(MainContext)
-    console.log(getProduct)
+    const {getProduct} = useContext(MainContext)
+    const nav = useNavigate()
     return (
         <div>
             {getProduct.map((x, i) =>
@@ -12,7 +13,7 @@ const AllProductsComp = () => {
                 <h1>{x.title}</h1>
                 <p>{x.description}</p>
                 <h3>{x.price} $</h3>
-                <button>Add to card</button>
+                <button onClick={() => nav(`/product/${x.title}`)}>Add to card</button>
 
                 </div>
 

@@ -20,13 +20,18 @@
     justify-content: center;
 }
 
+.space-ard-col {
+    justify-content: space-around;
+    flex-direction: column;
+}
+
 .ToolbarWrap {
     height: 8vh;
     background-color: #232222;
     padding: 16px;
 }
 
-h3 {
+.ToolbarWrap h3 {
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
@@ -35,7 +40,7 @@ h3 {
     color: white;
 }
 
-a {
+.ToolbarWrap a {
     text-decoration: none;
     color: white;
 }
@@ -45,6 +50,11 @@ a {
     width: 100vw;
     background-color: #dedee3;
     padding: 15px;
+}
+
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .createProductBoxWrap {
@@ -110,3 +120,35 @@ a {
     cursor: pointer;
     border-radius: 10px;
 }
+
+.singleProductWrap {
+    height: 500px;
+    width: 980px;
+    border: 1px solid #b4b4b6;
+    border-radius: 6px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.singleProductWrap button {
+    border: none;
+    background-color: #0969da;
+    color: #fff;
+    padding: 20px 40px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.flex-grow {
+    flex: 1;
+    height: 100%;
+    margin: 10px;
+
+}
+
+.flex-grow img {
+    width: 100%;
+}
+
