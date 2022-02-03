@@ -22,7 +22,8 @@ const CreateProductComp = () => {
                 title: title.current.value,
                 description: description.current.value,
                 photo: photo.current.value,
-                price: price.current.value
+                price: price.current.value,
+                quantity: 1
             }
             setProduct([...getProduct, newProduct])
         }

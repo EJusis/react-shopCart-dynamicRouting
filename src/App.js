@@ -3,17 +3,28 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import MainContext from "./Context/MainContext";
 import Toolbar from "./Components/Toolbar";
 import CreateProduct from "./Pages/CreateProduct";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import AllProducts from "./Pages/AllProducts";
 import Product from "./Pages/Product";
+import ShoppingCart from "./Pages/ShoppingCart";
 
 function App() {
     const [getProduct, setProduct] = useState([])
-    console.log(getProduct)
+    const [getCart, setCart] = useState([])
+    console.log(getCart)
+
+    function addQuantity (x, i) {
+
+        getCart[i].quantity++
+        setCart([...getCart])
+
+
+    }
+
 
     return (
         <div className='App'>
-            <MainContext.Provider value={{getProduct, setProduct}}>
+            <MainContext.Provider value={{getProduct, setProduct, getCart, setCart, addQuantity}}>
                 <BrowserRouter>
                     <Toolbar/>
 
@@ -21,8 +32,8 @@ function App() {
 
                         <Route path='/' element={<AllProducts/>}/>
                         <Route path='/create' element={<CreateProduct/>}/>
-                        <Route path='/product/:name' element={<Product getProduct={getProduct}/>}/>
-
+                        <Route path='/product/:name' element={<Product getProduct={getProduct} getCart={getCart} setCart={setCart}/>}/>
+                        <Route path='/cart' element={<ShoppingCart/>}/>
 
                     </Routes>
 

@@ -6,7 +6,7 @@ const Toolbar = () => {
         <div className='ToolbarWrap d-flex'>
             <h3><Link to='/'>All products</Link></h3>
             <h3><Link to='/create'>Create product</Link></h3>
-            <h3>Shopping cart</h3>
+            <h3><Link to='/cart'>Shopping cart</Link></h3>
         </div>
     );
 };
